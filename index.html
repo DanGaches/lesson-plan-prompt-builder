@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lesson Plan Prompt Builder (Streamlined)</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>Lesson Plan Prompt Builder</h1>
+      <p class="subtle">Type a short description → copy a prompt → ChatGPT outputs the full NIoT proforma lesson plan.</p>
+    </header>
+
+    <main class="container grid">
+      <section class="card full">
+        <h2>Quick inputs</h2>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="teacher">Teacher (optional)</label>
+            <input id="teacher" type="text" placeholder="e.g. J. Smith" />
+          </div>
+          <div class="field">
+            <label for="date">Date</label>
+            <input id="date" type="date" />
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="group">Teaching group</label>
+            <input id="group" type="text" placeholder="e.g. Y8 Set 2 / BTEC L2" />
+          </div>
+          <div class="field">
+            <label for="duration">Lesson duration</label>
+            <input id="duration" type="text" placeholder="e.g. 50 mins" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="title">Lesson title / topic</label>
+          <input id="title" type="text" placeholder="e.g. Photosynthesis: limiting factors" />
+        </div>
+
+        <div class="field">
+          <label for="brief">Brief description (main input)</label>
+          <textarea
+            id="brief"
+            rows="7"
+            placeholder="Write 4–10 lines: what the lesson is about, what students should learn/do, activities you expect, any key knowledge/skills, how you'll check understanding."
+          ></textarea>
+          <div class="subtle" style="font-size:12px; margin-top:6px;">
+            Tip: Include any must-have details like a worksheet, practical, reading, exam question, model answer, etc.
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="constraints">Optional: context / constraints</label>
+          <textarea
+            id="constraints"
+            rows="4"
+            placeholder="Anything ChatGPT must respect: SEND/EAL needs, behaviour routines, equipment/resources, seating, homework policy, school expectations, assessment style, etc."
+          ></textarea>
+        </div>
+
+        <div class="toolbar">
+          <button id="generateBtn" type="button">Generate prompt</button>
+          <button id="copyBtn" type="button">Copy prompt</button>
+          <button id="resetBtn" class="danger" type="button">Reset</button>
+        </div>
+
+        <h2>Generated ChatGPT prompt</h2>
+        <textarea id="promptOutput" rows="18" placeholder="Your prompt will appear here..."></textarea>
+
+        <details class="tips">
+          <summary>Optional tweaks</summary>
+          <ul>
+            <li>Add “Make it concise” or “Make it detailed” in your brief.</li>
+            <li>If you want it to match your timings, include a rough minute-by-minute flow in the brief.</li>
+            <li>If you don’t want ChatGPT to assume anything, leave constraints: “Do not invent details; use [ADD HERE].”</li>
+          </ul>
+        </details>
+      </section>
+    </main>
+
+    <footer class="container subtle footer">
+      <span>Local-only. Your browser saves inputs so you don’t retype each week.</span>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
