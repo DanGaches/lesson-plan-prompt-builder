@@ -64,6 +64,27 @@
           ></textarea>
         </div>
 
+        <!-- ✅ Optional slides / PowerPoint inputs -->
+        <div class="field">
+          <label style="display:flex; align-items:center; gap:10px;">
+            <input id="useSlides" type="checkbox" />
+            I will attach the PowerPoint/slides in ChatGPT (make the plan specific to the slides)
+          </label>
+          <div class="subtle" style="font-size:12px; margin-top:6px;">
+            Tick this, then upload the PowerPoint (or PDF export) into the same ChatGPT chat where you paste the prompt.
+          </div>
+        </div>
+
+        <div class="field" id="slidesNotesWrap" style="display:none;">
+          <label for="slidesNotes">Optional: notes about the slides/resources</label>
+          <textarea
+            id="slidesNotes"
+            rows="3"
+            placeholder="e.g. 'Slides include retrieval, teacher modelling, guided practice, 10-question exit ticket' or 'Main task is slides 7–10'."
+          ></textarea>
+        </div>
+        <!-- ✅ End optional slides inputs -->
+
         <div class="toolbar">
           <button id="generateBtn" type="button">Generate prompt</button>
           <button id="copyBtn" type="button">Copy prompt</button>
